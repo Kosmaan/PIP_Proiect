@@ -20,7 +20,7 @@ public class Citire {
 	void citireProfesori() {
 		try {
 			FileInputStream file = new FileInputStream(
-					"C:\\Users\\student\\Desktop\\1305B\\PIP_Proiect\\Proiect-PIP\\Utilities\\Info.xlsx");
+					"C:\\1305B\\Proiect-PIP\\Utilities\\Info.xlsx");
 			XSSFWorkbook wb = new XSSFWorkbook(file);
 			XSSFSheet ws = wb.getSheetAt(0);
 			
@@ -46,7 +46,7 @@ public class Citire {
 	void citireStudenti() {
 		try {
 			FileInputStream file = new FileInputStream(
-					"C:\\Users\\student\\Desktop\\1305B\\PIP_Proiect\\Proiect-PIP\\Utilities\\Info.xlsx");
+					"C:\\1305B\\Proiect-PIP\\Utilities\\Info.xlsx");
 			XSSFWorkbook wb = new XSSFWorkbook(file);
 			XSSFSheet ws = wb.getSheetAt(1);
 			
