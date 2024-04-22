@@ -143,6 +143,32 @@ java.net.URISyntaxException: Illegal character in path at index 16: file:/C:/Pro
 2024-04-22 08:20:39,804 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\1305B\Proiect-PIP\src\main\resources
 2024-04-22 08:20:39,805 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2024-04-22 08:20:39,806 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\1305B\Proiect-PIP\src\test\resources
+<<<<<<< HEAD
+2024-04-22 08:46:43,618 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2024-04-22 08:46:43,619 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\1305B\Proiect-PIP\src\main\resources
+2024-04-22 08:46:43,620 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2024-04-22 08:46:43,620 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\1305B\Proiect-PIP\src\test\resources
+2024-04-22 08:46:52,961 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2024-04-22 08:46:52,961 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\1305B\Proiect-PIP\src\main\resources
+2024-04-22 08:46:53,061 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2024-04-22 08:46:53,061 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\1305B\Proiect-PIP\src\test\resources
+2024-04-22 08:47:18,835 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2024-04-22 08:47:18,835 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\1305B\Proiect-PIP\src\main\resources
+2024-04-22 08:47:18,836 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2024-04-22 08:47:18,837 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\1305B\Proiect-PIP\src\test\resources
+2024-04-22 08:55:47,143 [Worker-26: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2024-04-22 08:55:47,144 [Worker-26: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\1305B\Proiect-PIP\src\main\resources
+2024-04-22 08:55:47,145 [Worker-26: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2024-04-22 08:55:47,145 [Worker-26: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\1305B\Proiect-PIP\src\test\resources
+2024-04-22 08:56:15,443 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2024-04-22 08:56:15,444 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\1305B\Proiect-PIP\src\main\resources
+2024-04-22 08:56:15,445 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2024-04-22 08:56:15,446 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\1305B\Proiect-PIP\src\test\resources
+2024-04-22 08:56:23,730 [Worker-26: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2024-04-22 08:56:23,730 [Worker-26: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\1305B\Proiect-PIP\src\main\resources
+2024-04-22 08:56:23,731 [Worker-26: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2024-04-22 08:56:23,732 [Worker-26: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\1305B\Proiect-PIP\src\test\resources
+=======
 2024-04-22 08:45:48,909 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
 2024-04-22 08:45:52,605 [Worker-0: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: ro.tuiasi.ac:Proiect-PIP:0.0.1-SNAPSHOT @ C:\Users\student\Desktop\1305B\PIP_Proiect\Proiect-PIP\pom.xml.
 2024-04-22 08:45:53,491 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
@@ -165,6 +191,7 @@ java.net.URISyntaxException: Illegal character in path at index 16: file:/C:/Pro
 2024-04-22 08:49:35,274 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\student\Desktop\1305B\PIP_Proiect\Proiect-PIP\src\main\resources
 2024-04-22 08:49:35,275 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2024-04-22 08:49:35,276 [Worker-13: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\student\Desktop\1305B\PIP_Proiect\Proiect-PIP\src\test\resources
+<<<<<<< HEAD
 2024-04-22 08:58:47,665 [ForkJoinPool.commonPool-worker-9] ERROR o.e.m.e.l.MavenRuntimeClasspathProvider - Illegal character in path at index 16: file:/C:/Program Files/ASoft/eclipse-2021/plugins/org.eclipse.m2e.maven.runtime_1.18.1.20211011-2139/jars/
 java.net.URISyntaxException: Illegal character in path at index 16: file:/C:/Program Files/ASoft/eclipse-2021/plugins/org.eclipse.m2e.maven.runtime_1.18.1.20211011-2139/jars/
 	at java.base/java.net.URI$Parser.fail(URI.java:2974)
@@ -348,3 +375,6 @@ java.net.URISyntaxException: Illegal character in path at index 16: file:/C:/Pro
 2024-04-22 09:00:29,109 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2024-04-22 09:00:29,110 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\student\Desktop\1305B\PIP_Proiect\Proiect-PIP\src\main\resources
 2024-04-22 09:00:29,110 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+=======
+>>>>>>> a22cb415cdf8a01d8d489bf654ddb26c5b981610
+>>>>>>> 3abb7bf9d51868f4f81ce6e929eb142da709743a
