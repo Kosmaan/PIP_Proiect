@@ -7,6 +7,6 @@ public class App
     public static void main( String[] args )
     {
     	Citire c = new Citire();
-    	c.citireProfesori();
+    	c.citireMaterii();
     }
 }

@@ -15,12 +15,14 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class Citire {
 	Vector<String> profesori = new Vector<String>();
-	Vector<String> grupe = new Vector<String>(20);
+	Vector<String> studenti = new Vector<String>();
+	Vector<String> grupe = new Vector<String>();
+	Vector<String> materii = new Vector<String>();
 	
 	void citireProfesori() {
 		try {
 			FileInputStream file = new FileInputStream(
-					"C:\\1305B\\Proiect-PIP\\Utilities\\Info.xlsx");
+					".\\Utilities\\Info.xlsx");
 			XSSFWorkbook wb = new XSSFWorkbook(file);
 			XSSFSheet ws = wb.getSheetAt(0);
 			
@@ -43,28 +45,47 @@ public class Citire {
 		}
 	}
 	
-	void citireStudenti() {
+	void citireStudenti(int an, String grupa) {
 		try {
-			FileInputStream file = new FileInputStream(
-					"C:\\1305B\\Proiect-PIP\\Utilities\\Info.xlsx");
+			int cnt = 0;
+			FileInputStream file = new FileInputStream(".\\Utilities\\Info.xlsx");
 			XSSFWorkbook wb = new XSSFWorkbook(file);
-			XSSFSheet ws = wb.getSheetAt(1);
+			XSSFSheet ws = wb.getSheetAt(an);
 			
 			Iterator<Row> rowIterator = ws.iterator();
-			while (rowIterator.hasNext()) {
-				Row row = rowIterator.next();
-				// For each row, iterate through all the columns
-				Iterator<Cell> cellIterator = row.cellIterator();
+			Row row1 = rowIterator.next();
+			Iterator<Cell> cellIterator1 = row1.cellIterator();
+			Cell cell1 = cellIterator1.next();
+			
+			while (!(cell1.getStringCellValue().equals(grupa)) && cellIterator1.hasNext()) {
+				cell1 = cellIterator1.next();
+				cnt++;
+			}
 
-				while (cellIterator.hasNext()) {
-					Cell cell = cellIterator.next();
-					grupe.add(cell.getStringCellValue());
-					System.out.println(grupe);
-				}
+			for (Row row : ws) { // For each Row.
+				Cell cell = row.getCell(cnt); // Get the Cell at the Index / Column you want.
+			    if (cell != null && !cell.getStringCellValue().contains("1") && !cell.getStringCellValue().isEmpty())
+			    	studenti.add(cell.getStringCellValue());
 			}
 			wb.close();
-			//System.out.println(grupe);
+			System.out.println(studenti);
 		}catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	void citireMaterii() {
+		try {
+		FileInputStream file = new FileInputStream(".\\Utilities\\Info.xlsx");
+		XSSFWorkbook wb = new XSSFWorkbook(file);
+		XSSFSheet ws = wb.getSheetAt(5);
+		
+		for (Row row : ws) { // For each Row.
+			Cell cell = row.getCell(0); // Get the Cell at the Index / Column you want.
+		    materii.add(cell.getStringCellValue());
+		}
+		System.out.println(materii);
+		} catch (Exception e){
 			e.printStackTrace();
 		}
 	}
