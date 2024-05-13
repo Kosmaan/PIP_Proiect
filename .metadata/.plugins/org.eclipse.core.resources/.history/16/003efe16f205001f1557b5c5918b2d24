@@ -1,0 +1,8 @@
+package ro.tuiasi.ac.Proiect_PIP;
+
+import org.apache.poi.xwpf.usermodel.*;
+
+public class Scriere {
+	XWPFDocument document = new XWPFDocument();
+	XWPFParagraph title = document.createParagraph();
+}

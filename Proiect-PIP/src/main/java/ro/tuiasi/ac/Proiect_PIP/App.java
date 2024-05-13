@@ -1,12 +1,15 @@
 package ro.tuiasi.ac.Proiect_PIP;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
 public class App 
 {
-    public static void main( String[] args )
+    public static void main( String[] args ) throws FileNotFoundException, InvalidFormatException, IOException
     {
-    	Citire c = new Citire();
-    	c.citireMaterii();
+    	Test t = new Test();
+    	t.Testul();
     }
 }

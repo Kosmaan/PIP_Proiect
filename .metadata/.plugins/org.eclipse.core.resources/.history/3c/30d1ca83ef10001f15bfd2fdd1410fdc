@@ -1,0 +1,22 @@
+package ro.tuiasi.ac.Proiect_PIP;
+
+import java.io.FileInputStream;
+
+import org.apache.poi.hwpf.HWPFDocument;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
+
+public class Test {
+	void Testul() {
+		try (FileInputStream inputStream = new FileInputStream(".\\Utilities\\Document.docx")) {
+			System.out.println("Cristi");
+			HWPFDocument docx = new HWPFDocument(inputStream);
+
+			// doc = replaceText(doc, "Carlos-Mihai Pascal", "Ticlosul");
+			//saveFile(".\\Utilities\\Document.docx", docx);
+			docx.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

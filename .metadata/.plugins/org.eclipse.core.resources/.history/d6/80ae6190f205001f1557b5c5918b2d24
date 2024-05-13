@@ -1,0 +1,24 @@
+package ro.tuiasi.ac.Proiect_PIP;
+
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
+import org.apache.poi.xwpf.usermodel.XWPFParagraph;
+import org.apache.poi.xwpf.usermodel.ParagraphAlignment;
+
+public class Scriere {
+	void ScriereDoc() {
+		try(XWPFDocument document = new XWPFDocument()) {
+	
+		XWPFParagraph title = document.createParagraph();
+		title.setAlignment(ParagraphAlignment.CENTER);
+		
+		XWPFRun titleRun = title.createRun();
+		titleRun.setText("Build Your REST API with Spring");
+		titleRun.setColor("009933");
+		titleRun.setBold(true);
+		titleRun.setFontFamily("Courier");
+		titleRun.setFontSize(20);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

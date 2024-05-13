@@ -1,0 +1,16 @@
+package ro.tuiasi.ac.Proiect_PIP;
+
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
+import org.apache.poi.xwpf.usermodel.XWPFParagraph;
+import org.apache.poi.xwpf.usermodel.ParagraphAlignment;
+import org.apache.poi.xwpf.usermodel.XWPFRun;
+
+public class Scriere {
+	try(XWPFDocument document = new XWPFDocument()) {
+	
+	XWPFParagraph title = document.createParagraph();
+	title.setAlignment(ParagraphAlignment.CENTER);
+	} catch(Exception e) {
+		e.printStackTrace();
+	}
+}

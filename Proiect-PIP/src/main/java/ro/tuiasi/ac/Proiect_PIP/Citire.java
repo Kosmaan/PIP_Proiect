@@ -1,13 +1,11 @@
 package ro.tuiasi.ac.Proiect_PIP;
 
-import java.io.File;
+
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.Iterator;
 import java.util.Vector;
 
-import org.apache.poi.ss.formula.functions.Column;
+
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -76,14 +74,16 @@ public class Citire {
 	
 	void citireMaterii() {
 		try {
-		FileInputStream file = new FileInputStream(".\\Utilities\\Info.xlsx");
-		XSSFWorkbook wb = new XSSFWorkbook(file);
-		XSSFSheet ws = wb.getSheetAt(5);
+			FileInputStream file = new FileInputStream(".\\Utilities\\Info.xlsx");
+			XSSFWorkbook wb = new XSSFWorkbook(file);
+			XSSFSheet ws = wb.getSheetAt(5);
 		
-		for (Row row : ws) { // For each Row.
-			Cell cell = row.getCell(0); // Get the Cell at the Index / Column you want.
-		    materii.add(cell.getStringCellValue());
-		}
+			for (Row row : ws) { // For each Row.
+				Cell cell = row.getCell(0); // Get the Cell at the Index / Column you want.
+				materii.add(cell.getStringCellValue());
+			
+			}
+		wb.close();
 		System.out.println(materii);
 		} catch (Exception e){
 			e.printStackTrace();

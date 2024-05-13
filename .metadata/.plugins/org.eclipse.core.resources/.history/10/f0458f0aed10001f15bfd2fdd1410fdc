@@ -1,0 +1,10 @@
+package ro.tuiasi.ac.Proiect_PIP;
+
+import java.io.FileInputStream;
+
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
+
+public class Test {
+	FileInputStream inputStream = new FileInputStream(".\\Utilities\\Document.docx")
+	XWPFDocument docx = new XWPFDocument(inputStream);
+}
