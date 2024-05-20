@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"ro.tuiasi.ac.Proiect_PIP","l":"App"}];updateSearchResults();

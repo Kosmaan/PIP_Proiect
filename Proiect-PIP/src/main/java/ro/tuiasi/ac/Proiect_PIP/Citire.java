@@ -89,4 +89,23 @@ public class Citire {
 			e.printStackTrace();
 		}
 	}
+	
+	void citireGrupe(int an) {
+		try {
+			FileInputStream file = new FileInputStream(".\\Utilities\\Info.xlsx");
+			XSSFWorkbook wb = new XSSFWorkbook(file);
+			XSSFSheet ws = wb.getSheetAt(an);
+			
+			Iterator<Row> rowIterator = ws.iterator();
+			Row row1 = rowIterator.next();
+			Iterator<Cell> cellIterator = row1.cellIterator();
+			while (cellIterator.hasNext()) {
+				Cell cell = cellIterator.next();
+				grupe.add(cell.getStringCellValue());
+			}
+			wb.close();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

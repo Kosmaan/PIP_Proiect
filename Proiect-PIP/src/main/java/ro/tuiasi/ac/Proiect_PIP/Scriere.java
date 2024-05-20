@@ -53,14 +53,13 @@ public class Scriere {
 	    }
 	}
 	
-	void replaceText() {
+	void replaceText(String replacedText, String updatedText) {
 		try {
-			String filePath = ".\\Utilities\\Document.docx";
-			FileInputStream inputStream = new FileInputStream(filePath);
-			System.out.println("Cristi");
+			String filePath = ".\\Utilities\\Doc1.docx";
+			InputStream inputStream = new FileInputStream(filePath);
 			XWPFDocument doc = new XWPFDocument(inputStream);
 
-			doc = replaceText(doc, "Carlos-Mihai Pascal", "Ticlosul");
+			doc = replaceText(doc, replacedText, updatedText);
 			saveFile(filePath, doc);
 			doc.close();
 		
