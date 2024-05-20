@@ -8,6 +8,11 @@ import java.util.Vector;
 
 public class Interfata {
 	public void initInterface() {
+		Citire c = new Citire();
+		c.citireProfesori();
+		
+		Scriere s = new Scriere();
+		
 		JFrame frame = new JFrame("Completare fisa doc ! ");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(800, 500); // Mărimea ferestrei
@@ -26,7 +31,7 @@ public class Interfata {
 		String[] itemsStanga = { "Nume Profesor", "Functia", "Asistent" };
 		String[] profi = { "lavinia", "cosmin", "alex" };
 		for (int i = 0; i < itemsStanga.length; i++) {
-			JComboBox comboBox = new JComboBox<>(profi);
+			JComboBox comboBox = new JComboBox<>(c.profesori);
 			comboBox.setRenderer(new MyComboBoxRenderer(itemsStanga[i]));
 			comboBox.setSelectedIndex(-1);
 			comboBox.setFont(new Font("Arial", Font.PLAIN, 14)); // Personalizăm fontul
@@ -36,8 +41,9 @@ public class Interfata {
 			comboBox.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					String selectedValue = (String) comboBox.getSelectedItem();
-			        System.out.println("Selected Value: " + selectedValue);
+					String selectedValueProfesori = (String) comboBox.getSelectedItem();
+					s.replaceText("numeProfesor", selectedValueProfesori);
+			        System.out.println("Selected Value: " + selectedValueProfesori);
 				}
 			});
 		}
