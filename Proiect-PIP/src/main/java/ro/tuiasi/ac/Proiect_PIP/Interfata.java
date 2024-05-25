@@ -1,15 +1,13 @@
 package ro.tuiasi.ac.Proiect_PIP;
 
 import javax.swing.*;
-
-import org.w3c.dom.html.HTMLSelectElement;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Vector;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 
-public class Interfata {
+public class Interfata implements FocusListener {
 	/**
 	 * @wbp.parser.entryPoint
 	 */
@@ -17,10 +15,9 @@ public class Interfata {
 		Citire c = new Citire();
 		c.citireProfesori();
 		c.citireMaterii();
-		
-		
+
 		Scriere s = new Scriere();
-		
+
 		JFrame frame = new JFrame("Completare fisa doc ! ");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(800, 500); // Mărimea ferestrei
@@ -37,14 +34,13 @@ public class Interfata {
 
 // Adăugăm combobox-uri pentru secțiunea stângă
 		String[] itemsStanga = { "numeProfesor", "functieProfesor", "numeAsistent" };
-		String[] profi = { "lavinia", "cosmin", "alex" };
 		String[] functii_profesori = { "Profesor", "Conferentiar", "Sef lucrari", "Asistent" };
-		
+
 		JLabel titlu = new JLabel("  COMPLETARE PROTECTIA MUNCII");
 		titlu.setFont(new Font("Cambria", Font.BOLD, 17)); // Personalizăm fontul
 		gbcStanga.gridy = 0;
 		panelStanga.add(titlu, gbcStanga);
-		
+
 		JComboBox comboBox1 = new JComboBox(c.profesori);
 		comboBox1.setRenderer(new MyComboBoxRenderer(itemsStanga[0]));
 		comboBox1.setSelectedIndex(-1);
@@ -56,10 +52,10 @@ public class Interfata {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String selectedValueProfesori = (String) comboBox1.getSelectedItem();
-		        System.out.println("Selected Value: " + selectedValueProfesori);
+				System.out.println("Selected Value: " + selectedValueProfesori);
 			}
 		});
-		
+
 		JComboBox comboBox2 = new JComboBox(functii_profesori);
 		comboBox2.setRenderer(new MyComboBoxRenderer(itemsStanga[1]));
 		comboBox2.setSelectedIndex(-1);
@@ -71,10 +67,10 @@ public class Interfata {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String selectedValueProfesori = (String) comboBox2.getSelectedItem();
-		        System.out.println("Selected Value: " + selectedValueProfesori);
+				System.out.println("Selected Value: " + selectedValueProfesori);
 			}
 		});
-		
+
 		JComboBox comboBox3 = new JComboBox<>(c.profesori);
 		comboBox3.setRenderer(new MyComboBoxRenderer(itemsStanga[2]));
 		comboBox3.setSelectedIndex(-1);
@@ -86,15 +82,16 @@ public class Interfata {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String selectedValueProfesori = (String) comboBox3.getSelectedItem();
-		        System.out.println("Selected Value: " + selectedValueProfesori);
+				System.out.println("Selected Value: " + selectedValueProfesori);
 			}
 		});
-		
-		JTextField textField1 = new JTextField("");
+
+		JTextField textField1 = new JTextField("Data completarii");
+		textField1.addFocusListener(this);
 		textField1.setPreferredSize(new Dimension(300, 50));
-		gbcStanga.gridy =4;
+		gbcStanga.gridy = 4;
 		panelStanga.add(textField1, gbcStanga);
-		
+
 // Crearea celui de-al doilea panel pentru secțiunea dreaptă
 		JPanel panelDreapta = new JPanel(new GridBagLayout()); // Utilizăm GridBagLayout
 		GridBagConstraints gbcDreapta = new GridBagConstraints();
@@ -103,10 +100,11 @@ public class Interfata {
 		gbcDreapta.insets = new Insets(10, 60, 10, 60); // Adăugăm padding mai mare
 
 // Adăugăm combobox-uri pentru secțiunea dreaptă
-		String[] itemsDreapta = {"an", "numeGrupe", "numeLaborator", "numeMaterie" };
-		String[] laboratoare = { "A0-1", "A0-2", "A0-3", "A0-4", "A0-5", "A0-6", "A0-7", "A0-8", "A0-9", "A0-10", "A0-11", "A0-12" };
-		String[] ani = { "1", "2", "3", "4"};
-		
+		String[] itemsDreapta = { "an", "numeGrupe", "numeLaborator", "numeMaterie" };
+		String[] laboratoare = { "A0-1", "A0-2", "A0-3", "A0-4", "A0-5", "A0-6", "A0-7", "A0-8", "A0-9", "A0-10",
+				"A0-11", "A0-12" };
+		String[] ani = { "1", "2", "3", "4" };
+
 		JComboBox comboBox4 = new JComboBox<>(ani);
 		comboBox4.setRenderer(new MyComboBoxRenderer(itemsDreapta[0]));
 		comboBox4.setSelectedIndex(-1);
@@ -118,12 +116,12 @@ public class Interfata {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String selectedValue = (String) comboBox4.getSelectedItem();
-		        System.out.println("Selected Value: " + selectedValue);
-		        c.citireGrupe(Integer.valueOf(selectedValue));
-		        System.out.println(Integer.valueOf(selectedValue));
+				System.out.println("Selected Value: " + selectedValue);
+				c.citireGrupe(Integer.valueOf(selectedValue));
+				System.out.println(Integer.valueOf(selectedValue));
 			}
 		});
-		
+
 		JComboBox comboBox5 = new JComboBox<>(c.grupe);
 		comboBox5.setRenderer(new MyComboBoxRenderer(itemsDreapta[1]));
 		comboBox5.setSelectedIndex(-1);
@@ -135,10 +133,10 @@ public class Interfata {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String selectedValue = (String) comboBox5.getSelectedItem();
-		        System.out.println("Selected Value: " + selectedValue);
+				System.out.println("Selected Value: " + selectedValue);
 			}
 		});
-		
+
 		JComboBox comboBox6 = new JComboBox<>(laboratoare);
 		comboBox6.setRenderer(new MyComboBoxRenderer(itemsDreapta[2]));
 		comboBox6.setSelectedIndex(-1);
@@ -150,10 +148,10 @@ public class Interfata {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String selectedValue = (String) comboBox6.getSelectedItem();
-		        System.out.println("Selected Value: " + selectedValue);
+				System.out.println("Selected Value: " + selectedValue);
 			}
 		});
-		
+
 		JComboBox comboBox7 = new JComboBox<>(c.materii);
 		comboBox7.setRenderer(new MyComboBoxRenderer(itemsDreapta[3]));
 		comboBox7.setSelectedIndex(-1);
@@ -165,15 +163,16 @@ public class Interfata {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String selectedValue = (String) comboBox7.getSelectedItem();
-		        System.out.println("Selected Value: " + selectedValue);
+				System.out.println("Selected Value: " + selectedValue);
 			}
 		});
-		
-		JTextField textField2 = new JTextField("");
+
+		JTextField textField2 = new JTextField("Data terminare semestru");
+		textField2.addFocusListener(this);
 		textField2.setPreferredSize(new Dimension(300, 50));
 		gbcDreapta.gridy = 4;
 		panelDreapta.add(textField2, gbcDreapta);
-		
+
 		JPanel panelCentral = new JPanel(new GridBagLayout()); // Utilizăm GridBagLayout
 		GridBagConstraints gbcCentral = new GridBagConstraints();
 		gbcCentral.fill = GridBagConstraints.HORIZONTAL; // Fill horizontally
@@ -186,38 +185,45 @@ public class Interfata {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 // Logica pentru salvarea datelor
-				s.replaceText("numeProfesor", (String) comboBox1.getSelectedItem());
-				s.replaceText("functieProfesor", (String) comboBox2.getSelectedItem());
-				s.replaceText("numeAsistent", (String) comboBox3.getSelectedItem());
-				s.replaceText("numeGrupe", (String) comboBox5.getSelectedItem());
-				s.replaceText("numeLaborator", (String) comboBox6.getSelectedItem());
-				s.replaceText("numeMaterie", (String) comboBox7.getSelectedItem());
-				s.replaceText("dataCompletare", textField1.getText());
-				s.replaceText("dataFinala", textField2.getText());
-				if (c.studenti.isEmpty()) {
-					String an = comboBox4.getSelectedItem().toString();
-					int anul = Integer.valueOf(an);
-					c.citireStudenti(anul, (String) comboBox5.getSelectedItem());
-					
-				}
-				int nrStudenti = c.studenti.size();
-				String nrStud = Integer.toString(nrStudenti);
-				s.replaceText("nrStudenti", nrStud);
-				
-				
-				for(int i=1; i<=nrStudenti; i++) {
-					if(i<10) {
-						s.replaceText("Name"+"0"+ Integer.toString(i), c.studenti.elementAt(i-1));
+				if (comboBox1.getSelectedItem() != null && comboBox2.getSelectedItem() != null
+						&& comboBox3.getSelectedItem() != null && comboBox4.getSelectedItem() != null
+						&& comboBox5.getSelectedItem() != null && comboBox6.getSelectedItem() != null
+						&& comboBox7.getSelectedItem() != null) {
+					if (!isDateValid(textField1.getText().trim()) || !isDateValid(textField2.getText().trim()))
+						JOptionPane.showMessageDialog(null, "Formatul de data este invalid", "Eroare",
+								JOptionPane.ERROR_MESSAGE);
+					else {
+						s.replaceText("numeProfesor", (String) comboBox1.getSelectedItem());
+						s.replaceText("functieProfesor", (String) comboBox2.getSelectedItem());
+						s.replaceText("numeAsistent", (String) comboBox3.getSelectedItem());
+						s.replaceText("numeGrupe", (String) comboBox5.getSelectedItem());
+						s.replaceText("numeLaborator", (String) comboBox6.getSelectedItem());
+						s.replaceText("numeMaterie", (String) comboBox7.getSelectedItem());
+
+						s.replaceText("dataCompletare", textField1.getText().trim());
+						s.replaceText("dataFinala", textField2.getText().trim());
+						if (c.studenti.isEmpty()) {
+							String an = comboBox4.getSelectedItem().toString();
+							int anul = Integer.valueOf(an);
+							c.citireStudenti(anul, (String) comboBox5.getSelectedItem());
+						}
+						int nrStudenti = c.studenti.size();
+						String nrStud = Integer.toString(nrStudenti);
+						s.replaceText("nrStudenti", nrStud);
+
+						for (int i = 1; i <= nrStudenti; i++) {
+							if (i < 10) {
+								s.replaceText("Name" + "0" + Integer.toString(i), c.studenti.elementAt(i - 1));
+							} else
+								s.replaceText("Name" + Integer.toString(i), c.studenti.elementAt(i - 1));
+						}
+
+						for (int i = nrStudenti + 1; i <= 20; i++)
+							s.replaceText("Name" + Integer.toString(i), "");
+
+						System.out.println("Datele au fost salvate.");
 					}
-					else
-						s.replaceText("Name"+ Integer.toString(i), c.studenti.elementAt(i-1));
 				}
-				
-				for(int i=nrStudenti+1; i<=20; i++)
-					s.replaceText("Name"+ Integer.toString(i), "");
-				
-				
-				System.out.println("Datele au fost salvate.");
 			}
 		});
 		panelCentral.add(saveButton, gbcCentral); // Adăugăm butonul de salvare mai întâi
@@ -242,22 +248,49 @@ public class Interfata {
 		frame.setVisible(true);
 	}
 
+	public boolean isDateValid(String text) {
+		String chars= "0123456789./";
+		boolean k = true;
+		if (text.isEmpty())
+			return false;
+		for (int i = 0; i < text.length(); i++) {
+			if (!chars.contains("" + text.charAt(i)))
+				k = false;
+		}
+		if (!k)
+			return false;
+		return true;
+	}
+
+	@Override
+	public void focusGained(FocusEvent e) {
+		// TODO Auto-generated method stub
+		JTextField t = (JTextField) e.getSource();
+		if (t.getText().equals("Data completarii") || t.getText().equals("Data terminare semestru"))
+			t.setText("");
+	}
+
+	@Override
+	public void focusLost(FocusEvent e) {
+		// TODO Auto-generated method stub
+	}
+
 }
-class MyComboBoxRenderer extends JLabel implements ListCellRenderer
-{
-    private String _title;
 
-    public MyComboBoxRenderer(String title)
-    {
-        _title = title;
-    }
+class MyComboBoxRenderer extends JLabel implements ListCellRenderer {
+	private String _title;
 
-    @Override
-    public Component getListCellRendererComponent(JList list, Object value,
-            int index, boolean isSelected, boolean hasFocus)
-    {
-        if (index == -1 && value == null) setText(_title);
-        else setText(value.toString());
-        return this;
-    }
+	public MyComboBoxRenderer(String title) {
+		_title = title;
+	}
+
+	@Override
+	public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected,
+			boolean hasFocus) {
+		if (index == -1 && value == null)
+			setText(_title);
+		else
+			setText(value.toString());
+		return this;
+	}
 }
