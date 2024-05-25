@@ -99,6 +99,8 @@ public class Citire {
 			Iterator<Row> rowIterator = ws.iterator();
 			Row row1 = rowIterator.next();
 			Iterator<Cell> cellIterator = row1.cellIterator();
+			
+			grupe.clear();
 			while (cellIterator.hasNext()) {
 				Cell cell = cellIterator.next();
 				grupe.add(cell.getStringCellValue());

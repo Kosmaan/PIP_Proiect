@@ -9,14 +9,9 @@ public class App
 {
     public static void main( String[] args ) throws FileNotFoundException, InvalidFormatException, IOException
     {
-    	Scriere s = new Scriere();
-    	//s.replaceText();
-    	
-    	Citire c = new Citire();
-    	c.citireGrupe(3);
-    	System.out.println(c.grupe);
     	
     	Interfata i = new Interfata();
     	i.initInterface();
+    	
     }
 }
